@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CadastroDeEventosRafonha.Views.EventoContratado"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#FFCCCB">
+
+    <VerticalStackLayout VerticalOptions="CenterAndExpand">
+
+         <Label Text="Descrição do Evento"
+                FontFamily="Kalam"
+                FontSize="50"
+                TextColor="gray" />
+
+        <Frame Margin="10">
+            <StackLayout  Orientation="Horizontal" >
+                <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                    <Label Text="Nome do evento: " />
+                    <Label Text="{Binding NomeEvento}"
+               TextColor="gray"/>
+                </HorizontalStackLayout>
+            </StackLayout>
+        </Frame>
+
+                <Frame Margin="10">
+            <Grid ColumnDefinitions="*, *, *"
+                  RowDefinitions="Auto, Auto">
+                <Label Grid.Row="0" Grid.Column="0" Text="Data de Inicio:" />
+                <Label Grid.Row="0" Grid.Column="1" Text="Data de Termino:" />
+                <Label Grid.Row="0" Grid.Column="2" Text="Duracao:" />
+
+                <Label Grid.Row="1" Grid.Column="0" 
+                       Text="{Binding DataInicio, StringFormat='{}{0:dd/MM/yyyy}'}"
+                       TextColor="gray" />
+
+                <Label Grid.Row="1" Grid.Column="1" 
+                       Text="{Binding DataFinal, StringFormat='{}{0:dd/MM/yyyy}'}"
+                       TextColor="gray" />
+
+                <Label Grid.Row="1" Grid.Column="2" 
+                       Text="{Binding Duracao}"
+                       TextColor="gray"/>
+            </Grid>
+        </Frame>
+
+        <Frame Margin="10">
+            <StackLayout  Orientation="Horizontal" >
+                <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                    <Label Text="Numero de Participantes: " />
+                    <Label Text="{Binding NumPessoas}" 
+                   TextColor="gray" />
+                </HorizontalStackLayout>
+            </StackLayout>
+        </Frame>
+
+        <Frame Margin="10">
+            <StackLayout  Orientation="Horizontal" >
+                <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                    <Label Text="Local do evento: " />
+                    <Label Text="{Binding LocalEvento}" 
+                   TextColor="gray" />
+                </HorizontalStackLayout>
+            </StackLayout>
+        </Frame>
+
+        <Frame Margin="10">
+            <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                <Label Text="Custo Total: " />
+                <Label Text="{Binding CustoTotal, StringFormat='{}{0:c}'}  "
+                       TextColor="gray"/>
+            </HorizontalStackLayout>
+        </Frame>
+
+        <Button Text="Voltar"
+                HorizontalOptions="Center"
+                Clicked="Button_Clicked" />
+
+    </VerticalStackLayout>
+</ContentPage>
